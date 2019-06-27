@@ -1,0 +1,9 @@
+---
+Name: watermarkimage
+---
+SilverStripe\Assets\Storage\DBFile:
+  extensions:
+    - bigreja\watermarkimage\Extensions\watermarkimage
+SilverStripe\SiteConfig\SiteConfig:
+      extensions:
+        - bigreja\watermarkimage\Extensions\watermarkimagesettings

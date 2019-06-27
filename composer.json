@@ -1,0 +1,31 @@
+{
+    "name": "bigreja/watermarkimage",
+    "type": "silverstripe-vendormodule",
+    "description": "Add a watermark to your Image",
+    "keywords": [
+        "silverstripe",
+        "image",
+        "watermark"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bruno Igreja",
+            "homepage": "http://www.superbraga.com"
+        }
+    ],
+    "require": {
+        "jonom/focuspoint": "^3.1",
+    },
+   
+    "extra": {
+        "branch-alias": {
+            "dev-master": "master"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "bigreja\\watermarkimage\\": "src/"
+        }
+    }
+}
