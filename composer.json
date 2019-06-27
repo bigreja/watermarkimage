@@ -2,6 +2,9 @@
     "name": "bigreja/watermarkimage",
     "type": "silverstripe-vendormodule",
     "description": "Add a watermark to your Image",
+    "require": {
+        "jonom/focuspoint": "^3.1",
+    },
     "keywords": [
         "silverstripe",
         "image",
@@ -13,11 +16,7 @@
             "name": "Bruno Igreja",
             "homepage": "http://www.superbraga.com"
         }
-    ],
-    "require": {
-        "jonom/focuspoint": "^3.1",
-    },
-   
+    ],   
     "extra": {
         "branch-alias": {
             "dev-master": "master"
