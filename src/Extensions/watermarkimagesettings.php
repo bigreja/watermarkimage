@@ -15,6 +15,9 @@ class watermarkimagesettings extends DataExtension
 {
 
     private static $db = [
+    	'alfa' => 'Int',
+    	'posh' => 'Int',
+    	'posv' => 'Int',
     ];
 
 	private static $has_one = array(
@@ -34,7 +37,7 @@ class watermarkimagesettings extends DataExtension
    public function updateCMSFields(FieldList $fields)
 {
 
-        $image = new UploadField('watermarkimg', 'setings');
+        $image = new UploadField('watermarkimg', 'WaterMark Image');
         $image->setFolderName('watermarkimg');
         $image->getValidator()->setAllowedExtensions(['png','gif','jpeg','jpg']);
 
