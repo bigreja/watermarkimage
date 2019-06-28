@@ -15,9 +15,9 @@ class watermarkimagesettings extends DataExtension
 {
 
     private static $db = [
-    	'alfa' => 'Int',
-    	'posh' => 'Int',
-    	'posv' => 'Int',
+    	'alfa' => 'Int(10)',
+    	'posh' => 'Int(0)',
+    	'posv' => 'Int(0)',
     ];
 
 	private static $has_one = array(
@@ -30,9 +30,6 @@ class watermarkimagesettings extends DataExtension
 
 
 
-	private static $summary_fields = array(
-		'GridThumbnail' => 'Profile Image'
-	);
 
    public function updateCMSFields(FieldList $fields)
 {
@@ -41,8 +38,14 @@ class watermarkimagesettings extends DataExtension
         $image->setFolderName('watermarkimg');
         $image->getValidator()->setAllowedExtensions(['png','gif','jpeg','jpg']);
 
-
+				$poshField = new NumericField('posh', 'Horisontal Position', null, 3),
+				$posvField = 	new NumericField('posv', 'Vertical Position', null, 3)
+				$alfaField = 	new NumericField('alfa', 'Alpha', null, 3)
+					
         $fields->addFieldsToTab('Root.WatermarkSettings', $image);
+        $fields->addFieldsToTab('Root.WatermarkSettings', $poshField);
+        $fields->addFieldsToTab('Root.WatermarkSettings', $posvField);
+        $fields->addFieldsToTab('Root.WatermarkSettings', $alfaField);
     }
 
 
