@@ -10,7 +10,6 @@ use SilverStripe\ORM\DataExtension;
 use SilverStripe\Assets\Image;
 use SilverStripe\Assets\File;
 use SilverStripe\Forms\FieldList;
-use SilverStripe\Assets\Storage\DBFile;
 
 class watermarkimagesettings extends DataExtension
 {
