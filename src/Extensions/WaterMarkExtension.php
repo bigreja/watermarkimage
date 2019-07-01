@@ -17,13 +17,30 @@ class WaterMarkExtension extends Extension
             $clone = clone $backend;
             $resource = clone $backend->getImageResource();
             
+            if($this->owner->watermarkimg->exists()){
              $wimg = clone $this->owner->watermarkimg->getImageBackend()->getImageResource();
 			 $wimg->opacity($this->owner->alfa);
-             $resource->insert($wimg, 'top-left', $this->owner->posv, $this->owner->posh);
+             $resource->insert($wimg, 'center', $this->PercentageX(), $this->PercentageY());
              $clone->setImageResource($resource);
+             }
              
             return $clone;
         });
+    }
+    
+    public function PercentageX()
+    {
+        if ($field = $this->owner->watermarkimg->exists()) {
+            return round($field->getWidth() * $this->owner->posv)/100;
+        }
+        return 0;
+    }
+    public function PercentageY()
+    {
+        if ($field = $this->owner->watermarkimg->exists()) {
+            return round($field->getHeight() * $this->owner->posh)/100;
+        }
+        return 0;
     }
 
 }
