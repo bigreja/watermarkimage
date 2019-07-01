@@ -20,6 +20,8 @@ class WaterMarkExtension extends Extension
              $wimg = clone $this->owner->watermarkimg->getImageBackend()->getImageResource();
 			 $wimg->opacity($this->owner->alfa);
              $resource->insert($wimg, 'center', $this->PercentageX(), $this->PercentageY());
+             Debug::Show($this->PercentageX());
+             Debug::Show($this->PercentageY());
              $clone->setImageResource($resource);
              
             return $clone;
