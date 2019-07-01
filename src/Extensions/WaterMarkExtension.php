@@ -17,11 +17,11 @@ class WaterMarkExtension extends Extension
             $clone = clone $backend;
             $resource = clone $backend->getImageResource();
             
-             $wimg = clone $this->owner->watermarkimg()->getImageResource();
-			 $wimg->opacity($this->owner->alfa);
-             $resource->insert($wimg, 'center', $this->PercentageX(), $this->PercentageY());
-             $clone->setImageResource($resource);
-
+             //$wimg = clone $this->owner->watermarkimg()->getImageResource();
+			 //$wimg->opacity($this->owner->alfa);
+             //$resource->insert($wimg, 'center', $this->PercentageX(), $this->PercentageY());
+             // $clone->setImageResource($resource);
+			Debug::Show($this->owner->watermarkimg);
             Debug::Show($this->PercentageX());
             Debug::Show($this->PercentageY());
 
