@@ -35,14 +35,14 @@ class WaterMarkExtension extends Extension
     
     public function PercentageX()
     {
-        if ($field = $this->owner->watermarkimg->exists()) {
+        if ($field = $this->owner->watermarkimg) {
             return round($field->getWidth() * $this->owner->posv)/100;
         }
         return 0;
     }
     public function PercentageY()
     {
-        if ($field = $this->owner->watermarkimg->exists()) {
+        if ($field = $this->owner->watermarkimg) {
             return round($field->getHeight() * $this->owner->posh)/100;
         }
         return 0;
