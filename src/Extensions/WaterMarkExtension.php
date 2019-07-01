@@ -25,6 +25,9 @@ class WaterMarkExtension extends Extension
              //$resource->insert($wimg, 'center', $this->PercentageX(), $this->PercentageY());
              // $clone->setImageResource($resource);
 			Debug::Show($this->owner->watermarkimg);
+			Debug::Show($this->owner->watermarkimg->getWidth());
+			Debug::Show($this->owner->watermarkimg->getHeight());
+			
             Debug::Show($this->PercentageX());
             Debug::Show($this->PercentageY());
 
