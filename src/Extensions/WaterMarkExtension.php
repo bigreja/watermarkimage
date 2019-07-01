@@ -20,8 +20,8 @@ class WaterMarkExtension extends Extension
 		$variant = $this->owner->variantName(__FUNCTION__, $amount);
         return $this->owner->manipulateImage($variant, function (\SilverStripe\Assets\Image_Backend $backend) use ($amount) {
              $clone = clone $backend;
-             Debug::Show($clone);
-             Debug::Show($backend);
+             Debug::Show($clone->getWidth());
+             Debug::Show($backend->getWidth());
              
              $resource = clone $backend->getImageResource();
             
