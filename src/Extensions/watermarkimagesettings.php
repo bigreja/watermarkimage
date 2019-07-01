@@ -38,9 +38,9 @@ class watermarkimagesettings extends DataExtension
         $image->setFolderName('watermarkimg');
         $image->getValidator()->setAllowedExtensions(['png','gif','jpeg','jpg']);
 
-				$poshField = new NumericField('posh', 'Horisontal Position', null, 3),
-				$posvField = 	new NumericField('posv', 'Vertical Position', null, 3)
-				$alfaField = 	new NumericField('alfa', 'Alpha', null, 3)
+				$poshField = new NumericField('posh', 'Horisontal Position', null, 3);
+				$posvField = 	new NumericField('posv', 'Vertical Position', null, 3);
+				$alfaField = 	new NumericField('alfa', 'Alpha', null, 3);
 					
         $fields->addFieldsToTab('Root.WatermarkSettings', $image);
         $fields->addFieldsToTab('Root.WatermarkSettings', $poshField);
