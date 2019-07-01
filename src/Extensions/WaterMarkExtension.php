@@ -20,8 +20,6 @@ class WaterMarkExtension extends Extension
 		$variant = $this->owner->variantName(__FUNCTION__, $amount);
         return $this->owner->manipulateImage($variant, function (\SilverStripe\Assets\Image_Backend $backend) use ($amount) {
              $clone = clone $backend;
-             Debug::Show($clone->getWidth()*$config->posv/100);
-             Debug::Show($backend->getWidth()*$config->posh/100);
              
              $resource = clone $backend->getImageResource();
             
@@ -30,6 +28,10 @@ class WaterMarkExtension extends Extension
 			 $wimg->opacity($config->alfa);
              $resource->insert($wimg, 'center', $config->posv, $config->posh);
              $clone->setImageResource($resource);
+             
+             Debug::Show($clone->getWidth()*$config->posv/100);
+             Debug::Show($backend->getWidth()*$config->posh/100);
+             
              return $clone;
         });
     }
