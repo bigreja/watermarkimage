@@ -4,6 +4,8 @@ namespace bigreja\watermarkimage\Extensions;
 
 use SilverStripe\Core\Extension;
 use SilverStripe\SiteConfig\SiteConfig;
+use SilverStripe\Assets\Image;
+use SilverStripe\ORM\DataExtension;
 
 class WaterMarkExtension extends Extension
 {
@@ -17,7 +19,7 @@ class WaterMarkExtension extends Extension
             $resource = clone $backend->getImageResource();
             
              $config = SiteConfig::current_site_config();
-   			 $wimg = $config->watermarkimg->getImageResource();
+   			 $wimg = $config->watermarkimg;
 			 $wimg->->opacity($config->alpha);
             $resource->insert($wimg);
         

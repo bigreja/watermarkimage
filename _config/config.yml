@@ -1,6 +1,9 @@
 ---
 Name: watermarkimage
 ---
+SilverStripe\Assets\Image:
+  extensions:
+    - bigreja\watermarkimage\Extensions\WaterMarkExtension
 SilverStripe\Assets\Storage\DBFile:
   extensions:
     - bigreja\watermarkimage\Extensions\WaterMarkExtension

@@ -47,6 +47,7 @@ class watermarkimagesettings extends DataExtension
         $fields->addFieldsToTab('Root.WatermarkSettings', $poshField);
         $fields->addFieldsToTab('Root.WatermarkSettings', $posvField);
         $fields->addFieldsToTab('Root.WatermarkSettings', $alfaField);
+        
     }
 
 
