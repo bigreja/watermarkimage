@@ -7,6 +7,7 @@ use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataExtension;
 use SilverStripe\Dev\Debug;
 use SilverStripe\Dev\Backtrace;
+use Silverstripe\SiteConfig\SiteConfig;
 
 
 class WaterMarkExtension extends Extension
