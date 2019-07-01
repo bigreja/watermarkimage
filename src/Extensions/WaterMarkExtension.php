@@ -15,7 +15,14 @@ class WaterMarkExtension extends Extension
     
     public function WaterMark($amount = null)
     {
-        $variant = $this->owner->variantName(__FUNCTION__, $amount);
+        	Debug::Show($this->owner->watermarkimg);
+			Debug::Show($this->owner->watermarkimg->getWidth());
+			Debug::Show($this->owner->watermarkimg->getHeight());
+			
+            Debug::Show($this->PercentageX());
+            Debug::Show($this->PercentageY());
+			
+		$variant = $this->owner->variantName(__FUNCTION__, $amount);
         return $this->owner->manipulateImage($variant, function (\SilverStripe\Assets\Image_Backend $backend) use ($amount) {
             $clone = clone $backend;
             $resource = clone $backend->getImageResource();
@@ -24,13 +31,7 @@ class WaterMarkExtension extends Extension
 			 //$wimg->opacity($this->owner->alfa);
              //$resource->insert($wimg, 'center', $this->PercentageX(), $this->PercentageY());
              // $clone->setImageResource($resource);
-			Debug::Show($this->owner->watermarkimg);
-			Debug::Show($this->owner->watermarkimg->getWidth());
-			Debug::Show($this->owner->watermarkimg->getHeight());
 			
-            Debug::Show($this->PercentageX());
-            Debug::Show($this->PercentageY());
-
              
             return $clone;
         });
