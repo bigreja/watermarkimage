@@ -5,6 +5,9 @@ namespace bigreja\watermarkimage\Extensions;
 use SilverStripe\Core\Extension;
 use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataExtension;
+use SilverStripe\Dev\Debug;
+use SilverStripe\Dev\Backtrace;
+
 
 class WaterMarkExtension extends Extension
 {
