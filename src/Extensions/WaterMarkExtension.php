@@ -18,9 +18,9 @@ class WaterMarkExtension extends Extension
             $clone = clone $backend;
             $resource = clone $backend->getImageResource();
             
-             $config = SiteConfig::current_site_config();
-   			 $wimg = $config->watermarkimg;
-			 $wimg->->opacity($config->alpha);
+             $config = $SiteConfig::current_site_config();
+   			 $wimg = $config->watermarkimg()->getImageResource();
+			 $wimg->opacity($config->alpha);
             $resource->insert($wimg);
         
             $clone->setImageResource($resource, 'top-left', $config->posv, $config->posh);
