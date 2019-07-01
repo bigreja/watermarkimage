@@ -27,12 +27,21 @@ class WaterMarkExtension extends Extension
             $clone = clone $backend;
             $resource = clone $backend->getImageResource();
             
+<<<<<<< HEAD
              //$wimg = clone $this->owner->watermarkimg()->getImageResource();
 			 //$wimg->opacity($this->owner->alfa);
              //$resource->insert($wimg, 'center', $this->PercentageX(), $this->PercentageY());
              // $clone->setImageResource($resource);
 			
              
+=======
+             $config = SiteConfig::current_site_config();
+   			 $wimg = clone $config->watermarkimg->Link->getImageResource();
+			 //$wimg->opacity($config->alpha);
+            $resource->insert($wimg);
+        
+            $clone->setImageResource($resource, 'top-left', $config->posv, $config->posh);
+>>>>>>> parent of f16c1df... Update WaterMarkExtension.php
             return $clone;
         });
     }
