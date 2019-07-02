@@ -33,5 +33,26 @@ class WaterMarkExtension extends Extension
              return $clone;
         });
     }
+    
+public function InstagramText($amount = null){
+
+$variant = $this->owner->variantName(__FUNCTION__, $amount);
+        return $this->owner->manipulateImage($variant, function (\SilverStripe\Assets\Image_Backend $backend) use ($amount) {
+             $clone = clone $backend;
+             
+             $resource = clone $backend->getImageResource();
+            // draw filled red rectangle
+				$resource->rectangle(0, 0, $clone->getWidth(), $clone->getHeight(), function ($draw) {
+				    $draw->background('#991915');
+				});
+             
+             $clone->setImageResource($resource);
+             
+         
+             return $clone;
+        });
+        
+
+}
 
 }
