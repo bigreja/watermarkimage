@@ -47,6 +47,8 @@ $variant = $this->owner->variantName(__FUNCTION__, $amount);
 				    $draw->background('#991915');
 				});
 				
+				Debug::Show(Director::baseFolder().'themes/simple/webfonts/Cambo-Regular-webfont.ttf');
+				exit();
 				// use callback to define details
 				$resource->text('foo', 0, 0, function($font) {
    					$font->file(Director::baseFolder().'themes/simple/webfonts/Cambo-Regular-webfont.ttf');
@@ -54,7 +56,7 @@ $variant = $this->owner->variantName(__FUNCTION__, $amount);
     				$font->color('#fdf6e3');
     				$font->align('center');
   	  				$font->valign('top');
-    				$font->angle(45);
+    				//$font->angle(45);
 });
              
              $clone->setImageResource($resource);
@@ -65,5 +67,40 @@ $variant = $this->owner->variantName(__FUNCTION__, $amount);
         
 
 }
+
+public function InstagramText($amount = null){
+
+$variant = $this->owner->variantName(__FUNCTION__, $amount);
+        return $this->owner->manipulateImage($variant, function (\SilverStripe\Assets\Image_Backend $backend) use ($amount) {
+             $clone = clone $backend;
+
+             $resource = clone $backend->getImageResource();
+            // draw filled red rectangle
+            //Debug::Show( $clone->getHeight()-205);
+			//Debug::Show(intval($clone->getHeight()/2));
+
+				$resource->rectangle(5, intval($clone->getHeight()/2), $clone->getWidth()-5,  intval($clone->getHeight()-5), function ($draw) {
+				    $draw->background('rgba(153, 25, 31, 0.5)');
+				});
+
+				// use callback to define details
+				$resource->text("Badamerda isto nao deve \nfazer quebra de texto", 10, $clone->getHeight()-50, function($font) {
+   					$font->file(Director::baseFolder().'/themes/simple/webfonts/Cambo-Regular-webfont.ttf');
+    				$font->size(20);
+    				$font->color('#FFFFFF');
+    				$font->align('left');
+  	  				$font->valign('top');
+
+});
+
+             $clone->setImageResource($resource);
+
+
+             return $clone;
+        });
+
+
+}
+
 
 }
