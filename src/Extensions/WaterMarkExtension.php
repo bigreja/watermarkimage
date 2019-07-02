@@ -49,7 +49,7 @@ $variant = $this->owner->variantName(__FUNCTION__, $amount);
 				
 				// use callback to define details
 				$resource->text('foo', 0, 0, function($font) {
-   					$font->file(Director::baseFolder().'themes/simple/webfonts/Cambo-Regular-webfont.ttf.ttf');
+   					$font->file(Director::baseFolder().'themes/simple/webfonts/Cambo-Regular-webfont.ttf');
     				$font->size(24);
     				$font->color('#fdf6e3');
     				$font->align('center');
