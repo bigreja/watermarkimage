@@ -8,6 +8,7 @@ use SilverStripe\ORM\DataExtension;
 use SilverStripe\Dev\Debug;
 use SilverStripe\Dev\Backtrace;
 use Silverstripe\SiteConfig\SiteConfig;
+use Silverstripe\Director;
 
 
 class WaterMarkExtension extends Extension
@@ -45,6 +46,16 @@ $variant = $this->owner->variantName(__FUNCTION__, $amount);
 				$resource->rectangle(0, 0, $clone->getWidth(), $clone->getHeight(), function ($draw) {
 				    $draw->background('#991915');
 				});
+				
+				// use callback to define details
+				$resource->text('foo', 0, 0, function($font) {
+   					$font->file(Director::baseFolder().'themes/simple/webfonts/Cambo-Regular-webfont.ttf.ttf');
+    				$font->size(24);
+    				$font->color('#fdf6e3');
+    				$font->align('center');
+  	  				$font->valign('top');
+    				$font->angle(45);
+});
              
              $clone->setImageResource($resource);
              
