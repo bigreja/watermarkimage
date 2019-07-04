@@ -1,4 +1,4 @@
-#watermarkimage
+# watermarkimage
 
 Ads the ability to watermark any image file on Silverstripe
 
