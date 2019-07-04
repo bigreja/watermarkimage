@@ -1,3 +1,5 @@
+#watermarkimage
+
 Ads the ability to watermark any image file on Silverstripe
 
 Ads Tab on Site settings to set watermark image, position and alpha.
