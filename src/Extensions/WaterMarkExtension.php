@@ -68,7 +68,7 @@ $variant = $this->owner->variantName(__FUNCTION__, $amount);
 
 }
 
-public function InstagramText($amount = null){
+public function InstagramTextHard($amount = null){
 
 $variant = $this->owner->variantName(__FUNCTION__, $amount);
         return $this->owner->manipulateImage($variant, function (\SilverStripe\Assets\Image_Backend $backend) use ($amount) {
